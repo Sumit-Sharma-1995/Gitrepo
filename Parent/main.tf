@@ -4,6 +4,12 @@ module "azurerm_resource_group" {
   resource_group_location = "West US"
 }
 
+module "azurerm_resource_group" {
+  source                  = "../Modules/azurerm_resource_group"
+  resource_group_name     = "sumitdo_rg1"
+  resource_group_location = "West US"
+}
+
 module "azurerm_virtual_network" {
   depends_on           = [module.azurerm_resource_group]
   source               = "../Modules/azurerm_virtual_network"
